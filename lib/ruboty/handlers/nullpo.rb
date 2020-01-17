@@ -8,7 +8,20 @@ module Ruboty
       on /ぬるぽ|ヌルポ|nullpo/i, name: "nullpo", description: "Request ｶﾞｯ", all: true
 
       def nullpo(message)
-        body = if rich?
+        message.reply(body)
+      end
+
+      private
+
+      def body
+        if rich?
+          ga_aa
+        else
+          ga_text
+        end
+      end
+
+      def ga_aa
           <<-GA
 　 Λ＿Λ　　　　＼＼
  （　・∀・）　　　|　|　ｶﾞｯ
@@ -18,18 +31,15 @@ module Ruboty
  ＿/し´　／／. Ｖ｀Д´）/
 （＿フ彡　　　　　　 /　>>@#{message.from}
 GA
-        else
-          'ｶﾞｯ'
-        end
-        message.reply(body)
       end
 
-      private
+      def ga_text
+        'ｶﾞｯ'
+      end
 
       def rich?
         ENV['NULLPO_RESPONSE_STYLE'] == 'rich'
       end
-
     end
   end
 end
