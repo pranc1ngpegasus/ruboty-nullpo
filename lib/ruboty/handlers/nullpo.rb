@@ -5,7 +5,12 @@ module Ruboty
     class Nullpo < Base
       env :NULLPO_RESPONSE_STYLE, "rich: Use rich style ｶﾞｯ", optional: true
 
-      on /ぬるぽ|ヌルポ|nullpo/i, name: "nullpo", description: "Request ｶﾞｯ", all: true
+      on(
+        %r{ぬるぽ|ヌルポ|nullpo},
+        name: "nullpo",
+        description: "Request ｶﾞｯ",
+        all: true
+      )
 
       def nullpo(message)
         message.reply(body)
