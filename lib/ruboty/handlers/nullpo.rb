@@ -34,7 +34,7 @@ module Ruboty
 　 Ｙ　/ノ　　　 人
 　　 /　）　 　 < 　>_Λ∩
  ＿/し´　／／. Ｖ｀Д´）/
-（＿フ彡　　　　　　 /　>>@#{message.from}
+（＿フ彡　　　　　　 /
 GA
       end
 
